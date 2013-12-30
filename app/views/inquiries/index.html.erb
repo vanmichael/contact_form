@@ -1,0 +1,17 @@
+<div class="row">
+	<h1>All Inquiries</h1>
+
+	<h2>Count: <%= Inquiry.all.count %></h2>
+</div>
+
+<div class="row">
+<% @inquiries.each do |i| %>
+<ul class="pricing-table">
+  <li class="title">Subject: <%= i.subject %></li>
+  <li class="price">Inquierer: <%= "#{i.first_name} #{i.last_name}" %></li>
+  <li class="description">Description: <%= i.description %> </li>
+  <li class="cta-button"><a class="button">Delete</a></li>
+</ul>
+<% end %>
+
+</div>
