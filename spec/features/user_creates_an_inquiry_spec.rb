@@ -33,7 +33,12 @@ feature "User creates an inquiry", %q{
 			visit '/inquiries/new'
 			click_on "Create Inquiry"
 
-			expect(page).to have_content "Add new Inquiry First name Last name Email Subject Description"
+			expect(page).to have_content "First name can't be blank"
+			expect(page).to have_content "Last name can't be blank"
+			expect(page).to have_content "Email can't be blank"
+			expect(page).to have_content "Email is invalid"
+			expect(page).to have_content "Subject can't be blank"
+			expect(page).to have_content "Description can't be blank"
 		end
 	end
 
